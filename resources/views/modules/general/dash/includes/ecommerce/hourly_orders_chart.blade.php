@@ -1,0 +1,10 @@
+<div class="widget-11 card">
+    <div class="card-header">
+        <div class="card-title full-width">Orders by hour</div>
+    </div>
+    <div class="card-body">
+        <div class="min-height-400">
+            <canvas id="hourly-orders-count-chart"></canvas>
+        </div>
+    </div>
+</div>

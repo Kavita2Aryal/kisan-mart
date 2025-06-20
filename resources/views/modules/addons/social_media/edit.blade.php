@@ -1,0 +1,64 @@
+@extends('layouts.app')
+@section('title', 'Update Social Media')
+
+@section('content')
+<div class="container-fluid">
+    <form class="m-t-20" role="form" method="POST" action="{{ route('social.media.update', [$social_media->uuid]) }}">
+        @csrf
+        @method('PUT')
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xlg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title full-width">Update Social Media 
+                            <a href="{{ route('social.media.index') }}" class="normal btn btn-link pull-right m-r-5" data-tippy-content="Go Back" data-tippy-placement="left"><i class="pg-icon">arrow_left</i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group required form-group-default input-group @error('social') has-error @enderror">
+                            <div class="form-input-group">
+                                <label>Social Media</label>
+                                <select name="social" class="form-control @error('social') error @enderror" required>
+                                    <option value="" selected>Select a social media</option>
+                                    @forelse ($socials as $key => $social)
+                                        <option value="{{ $key }}" @if($social_media->social==$key) selected @endif>{{ ucwords($key) }}</option>
+                                    @empty
+                                    @endforelse
+                                </select>
+                                @error('social')
+                                <label class="error">{{ $message }}</label>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group required form-group-default input-group @error('link') has-error @enderror">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="pg-icon">user_profile</i></span>
+                        </div>
+                        <div class="form-input-group">
+                            <label>Profile Link</label>
+                            <input type="url" class="form-control @error('link') error @enderror" name="link" required autocomplete="off" value="{{ $social_media->link ?? old('link') }}">
+                            @error('link')
+                            <label class="error">{{ $message }}</label>
+                            @enderror
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <div class="form-check info m-t-0 m-b-0">
+                                    <input type="checkbox" name="is_active" value="10" id="checkbox-active" @if($social_media->is_active==10) checked @endif>
+                                    <label for="checkbox-active">Publish ?</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6 text-right">
+                                <button class="btn btn-link btn-link-fix p-l-10 p-r-10" type="submit">
+                                    UPDATE <span class="visible-x-inline m-l-5">SOCIAL MEDIA</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@endsection

@@ -1,0 +1,293 @@
+.quickview-wrapper {
+    position: fixed;
+    right: -285px;
+    top: 0;
+    width: 285px;
+    background: #fff;
+    bottom: 0;
+    z-index: 100000;
+    border: none;
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.05, 0.74, 0.27, 0.99);
+    transition: transform 400ms cubic-bezier(0.05, 0.74, 0.27, 0.99);
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+.quickview-wrapper.open {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate(-100%, 0);
+    box-shadow: rgba(15, 15, 15, 0.05) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 3px 6px, rgba(15, 15, 15, 0.2) 0 9px 24px;
+}
+.quickview-wrapper .quickview-toggle {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    color: #929aac;
+    padding: 0;
+    line-height: 0;
+}
+.quickview-wrapper .quickview-toggle:hover:not(.active) {
+    color: #dee1e6;
+    background: 0 0;
+    cursor: pointer;
+}
+.quickview-wrapper .quickview-toggle i {
+    font-size: 24px;
+}
+.quickview-wrapper .btn-icon-link:before {
+    z-index: 1;
+}
+.quickview-wrapper .nav-tabs {
+    background-color: #2b303b;
+    position: relative;
+    padding: 0 43px;
+    border-color: transparent;
+}
+.quickview-wrapper .nav-tabs > li > a {
+    padding: 11px;
+    color: #929aac;
+    border: 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 62px;
+    line-height: 1.4;
+}
+.quickview-wrapper .nav-tabs > li > a:hover {
+    color: #cbcfd7;
+}
+.quickview-wrapper .nav-tabs > li > a.active {
+    color: #fff;
+}
+.quickview-wrapper .nav-tabs > li > a.active:hover,
+.quickview-wrapper .nav-tabs > li > a.active:focus {
+    background: 0 0;
+    color: #fff;
+}
+.quickview-wrapper .nav-tabs > li.active > a,
+.quickview-wrapper .nav-tabs > li.active > a:hover,
+.quickview-wrapper .nav-tabs > li.active > a:focus {
+    background-color: transparent;
+    border: 0;
+}
+.quickview-wrapper .nav-tabs ~ .tab-content {
+    position: absolute;
+    padding: 0;
+    left: 0;
+    right: 0;
+    top: 38px;
+    bottom: 0;
+    height: auto;
+}
+.quickview-wrapper .nav-tabs ~ .tab-content > div {
+    height: 100%;
+}
+.quickview-wrapper .nav-tabs ~ .tab-content ul {
+    margin: 0;
+    padding: 0;
+}
+.quickview-wrapper .nav-tabs ~ .tab-content ul li {
+    list-style: none;
+}
+.scroll {
+    position: relative;
+    overflow: auto;
+}
+.scroll-wrapper > .scroll-element,
+.scroll-wrapper > .scroll-element div {
+    background: 0 0;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+.scroll-wrapper > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.scroll-wrapper > .scroll-element.scroll-x {
+    bottom: 2px;
+    height: 7px;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+}
+.scroll-wrapper > .scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 2px;
+    top: 0;
+    width: 4px;
+}
+.scroll-wrapper > .scroll-element .scroll-element_outer {
+    opacity: 0.3;
+}
+.scroll-wrapper > .scroll-element .scroll-element_size {
+    background-color: rgba(0, 0, 0, 0.07);
+    opacity: 0;
+}
+.scroll-wrapper > .scroll-element .scroll-bar {
+    background-color: #697686;
+}
+.scroll-wrapper > .scroll-element.scroll-x .scroll-bar {
+    bottom: 0;
+    height: 4px;
+    min-width: 24px;
+    top: auto;
+}
+.scroll-wrapper > .scroll-element.scroll-x .scroll-element_outer {
+    bottom: 0;
+    top: auto;
+    left: 2px;
+    -webkit-transition: height 0.2s;
+    transition: height 0.2s;
+}
+.scroll-wrapper > .scroll-element.scroll-x .scroll-element_size {
+    left: -4px;
+}
+.scroll-wrapper > .scroll-element.scroll-y .scroll-bar {
+    left: auto;
+    min-height: 24px;
+    right: 0;
+    width: 4px;
+}
+.scroll-wrapper > .scroll-element.scroll-y .scroll-element_outer {
+    left: auto;
+    right: 0;
+    top: 2px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.scroll-wrapper > .scroll-element.scroll-y .scroll-element_size {
+    top: -4px;
+}
+.scroll-wrapper > .scroll-content {
+    box-sizing: inherit !important;
+}
+.scroll-wrapper.auto-hide > .scroll-element .scroll-element_track {
+    display: none;
+}
+.scroll-wrapper > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -11px;
+}
+.scroll-wrapper > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -11px;
+}
+.scroll-wrapper > .scroll-element:hover .scroll-element_outer,
+.scroll-wrapper > .scroll-element.scroll-draggable .scroll-element_outer {
+    overflow: hidden;
+    -ms-filter: "alpha(opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+.scroll-wrapper > .scroll-element:hover .scroll-element_outer .scroll-element_size,
+.scroll-wrapper > .scroll-element.scroll-draggable .scroll-element_outer .scroll-element_size {
+    opacity: 1;
+}
+.scroll-wrapper > .scroll-element:hover .scroll-element_outer .scroll-bar,
+.scroll-wrapper > .scroll-element.scroll-draggable .scroll-element_outer .scroll-bar {
+    height: 100%;
+    width: 100%;
+}
+.scroll-wrapper > .scroll-element.scroll-x:hover .scroll-element_outer,
+.scroll-wrapper > .scroll-element.scroll-x.scroll-draggable .scroll-element_outer {
+    height: 10px;
+    min-height: 7px;
+}
+.scroll-wrapper > .scroll-element.scroll-y:hover .scroll-element_outer,
+.scroll-wrapper > .scroll-element.scroll-y.scroll-draggable .scroll-element_outer {
+    min-width: 7px;
+    width: 7px;
+}
+
+
+.builder {
+    width: 423px;
+    right: -423px;
+}
+.builder > div {
+    height: calc(100% - 12px);
+}
+.builder .nav-tabs {
+    background-color: transparent;
+    padding: 0;
+}
+.builder .nav-tabs > li > a {
+    min-width: 80px;
+    padding: 16px 0;
+}
+.builder .nav-tabs > li > a.active {
+    color: #d83c31;
+}
+.builder .nav-tabs > li > a.active:active, 
+.builder .nav-tabs > li > a.active:hover, 
+.builder .nav-tabs > li > a.active:focus  {
+    color: #d83c31;
+}
+.builder .nav-tabs ~ .tab-content {
+    position: relative;
+    padding-right: 0;
+    height: 100%;
+    top: 0;
+    background-color: #fff;
+}
+.builder .nav-tabs ~ .tab-content .tab-pane {
+    height: 100%;
+    overflow-x: hidden !important;
+}
+.builder .nav-tabs ~ .tab-content .tab-pane .scrollable {
+    padding-top: 27px;
+    height: calc(100% - 30px);
+    overflow-x: hidden !important;
+}
+.builder .builder-close {
+    position: absolute;
+    right: 36px;
+    top: 26px;
+    padding: 7px;
+    width: auto;
+    z-index: 10;
+}
+.builder .builder-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    top: 0;
+    left: -58px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 28px;
+}
+.builder:before {
+    position: absolute;
+    content: "";
+    width: 58px;
+    height: 58px;
+    background-color: transparent;
+    top: 0;
+    left: -58px;
+}
+.builder:after {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    width: 5px;
+    height: 50px;
+    left: 0;
+    top: 20%;
+}
+.builder a.menu-item-link {
+    color: #777;
+}
+.builder a.menu-item-link:hover {
+    color: #212121;
+}
