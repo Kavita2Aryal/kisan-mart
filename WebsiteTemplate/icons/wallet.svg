@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.159" height="17.435" viewBox="0 0 19.159 17.435">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="-0.194" x2="0.5" y2="1.246" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#15afb7"/>
+      <stop offset="1" stop-color="#1a3fcf"/>
+    </linearGradient>
+  </defs>
+  <g id="wallet" transform="translate(-38 -48.076)">
+    <path id="Union_56" data-name="Union 56" d="M2.259,17.435A2.261,2.261,0,0,1,0,15.177V5.325A2.246,2.246,0,0,1,.47,3.948,2.958,2.958,0,0,1,2.281,2.667l.017,0L14.625.054a2.022,2.022,0,0,1,2.482,1.97V3.076a2.261,2.261,0,0,1,2.053,2.249v9.852A2.261,2.261,0,0,1,16.9,17.435ZM14.369,9.909a1.37,1.37,0,0,0,1.368,1.368h2.053V8.54H15.738A1.37,1.37,0,0,0,14.369,9.909Zm.563-8.522-.017,0L7,3.066h8.736V2.023a.653.653,0,0,0-.653-.654A.667.667,0,0,0,14.932,1.387Zm.805,8.522a.684.684,0,1,1,.685.684A.684.684,0,0,1,15.738,9.909Z" transform="translate(38 48.076)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

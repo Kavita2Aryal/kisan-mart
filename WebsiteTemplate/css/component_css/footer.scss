@@ -1,0 +1,506 @@
+.news-letter{
+	background-image: linear-gradient(180deg, transparent 55%, $primary-color 55%);
+	@include responsivesm{
+		background-image: linear-gradient(180deg, transparent 25%, $primary-color 45%);
+
+	}
+	.section-rule{
+		padding: 60px 0;
+		padding-top: 0px;
+		@include responsivelg{
+			padding:30px 0;
+		}
+		@include responsivesm{
+			padding-top: 0;
+			padding-bottom: 14px;
+		}
+		&> .row{
+			align-items: center;
+		}
+	}
+	article{
+		@include article;
+		@include responsivemd{
+			@include card__margin;
+		}
+
+	}
+	.card{
+		border: 0;
+		@include border-radius;
+		padding: 2em;
+		flex-direction: row;
+		font-size: 16px;
+		align-items: center;
+		@include responsivesm{
+			flex-direction: column;
+			padding: 1em;
+		}
+		img{
+			width: 300px;
+			height: auto;
+			object-fit: contain;
+			margin-right: 2em;
+			@include responsivesm{
+				width: 100px;
+				margin-right: 0;
+			}
+		}
+		.card__title{
+			color: $primary-color;
+			@include responsivemd{
+				font-weight: 600;
+				font-size: 18px;
+			}
+			@include responsivesm{
+				font-size: 18px;
+			}
+		}
+		.para{
+			color: $dark;
+		}
+		
+
+	}
+	.d-flex.align-items-center{
+		flex-wrap: wrap;
+	}
+	.card__title{
+		font-size: 2em;
+		// color: #fff;
+		color: $dark;
+		font-weight: bold;
+		margin-bottom: 12px;
+		@include responsivemd{
+			// font-size: 16px;
+			font-weight: 600;
+			height: 100%;
+			margin-bottom: 13px;
+			color: #fff;
+			-webkit-line-clamp: none !important;
+		}
+		@include responsivesm{
+			font-size: 18px;
+		}
+	}
+	.para{
+		// font-size: 1.1em;
+		// font-weight: bold;
+		// color: $white;
+		color: $dark;
+		margin: 0;
+		margin-right: 2em;
+		width: 45%;
+		@include responsivemd{
+			color: #fff;
+		}
+		@include responsivesm{
+			margin-bottom: 1em;
+			width: 100%;
+		}
+	}
+	form{
+		flex-grow:2;
+	}
+	.form-group{
+		flex-wrap: nowrap;
+		margin-bottom: 0;
+		position: relative;
+		background-color: rgba($primary-color, 0.06);
+		height: 55px;
+		@include border-radius;
+		display: flex;
+		padding: 0 10px;
+
+		input[type="email"]{
+			flex-grow: 2;
+			height: 100%;
+			margin-right: 0 !important;
+			box-shadow: none;
+			border:0;
+			background-color: transparent;
+			font-size: 17px;
+			&:focus + button{
+				transform: translate(10px,-10px);
+			}
+		}
+		button{
+			height: 50px;
+			padding: 0 11px;
+			border-radius: 0;
+			background-color: transparent;
+			border: 0;
+			font-size: 16px;
+			color: #f9f9f9;
+			@include transition-out;
+			&:hover{
+				@include transition-in;
+				path{
+					fill: $secondary-color;
+				}
+			}
+
+		}
+		
+	}
+	.card__body{
+		width: 100%;
+	}
+	
+}
+
+footer{
+	font-size: 18px;
+	font-weight: 400;
+	background-color: #fff;
+	color: #707070;
+	@include responsivelg{
+		font-size: 16px;
+	}
+	@include responsivesm{
+		font-size: 15px;
+		font-weight: normal;
+	}
+	.section-rule{
+		padding-bottom: 20px;
+		@include responsivemd{
+			padding-bottom: 0;
+		}
+	}
+	label{
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.para{
+		// color: $dark;
+		font-weight: bold;
+		font-size: 1em;
+	}
+	.card__header{
+		@include card-title;
+		font-size: 1.6em;
+		font-weight: bold;
+		height: auto !important;
+		&.next__gen{
+			margin-top: 0.9em;
+		}
+	}
+	ul{
+		@include ul;
+		path{
+			fill: $primary-color;
+		}
+		a{
+			padding: 6px 0px;
+			@include responsivesm{
+				padding: 2px 0px;
+			}
+		}
+		@include responsivesm{
+			margin-bottom: 6px;
+		}
+	}
+	.screen{
+		margin-bottom: 0;
+		@include responsivesm{
+			// background-color: #f2f9f1;
+			// @include border-radius;
+			display: none;
+		}
+		.card__title{
+			color: #606060;
+		}
+		article.screen-art{
+			font-size: 16px;
+			@include card--margin;
+			&:nth-child(2n){
+				padding-right: 0;
+			}
+			&:nth-child(2n+1){
+				padding-left: 0;
+			}
+			&> .d-flex{
+				padding: 3em 2.2em;
+				background-color: rgba($primary-color,0.06);
+				@include responsivelg{
+					padding: 1em;
+					min-height:120px;
+				}
+				@include responsivesm{
+					background-color: transparent;
+					min-height: 80px;
+
+				}
+			}
+			@include responsivesm{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.social{
+		a{
+			color: #bbb;
+			font-size: 2em;
+			margin-right: 18px;
+			&:hover{
+				color: $primary-color;
+			}
+		}
+	}
+	.img__wrapper{
+		img{
+			object-fit: cover;
+			margin-right: 8px;
+			margin-bottom: 12px;
+			@include responsivelg{
+				height: 40px;
+				width: auto;
+				object-fit: contain;
+			}
+		}
+	}
+	.inline--link{
+		@include article;
+		@include responsivesm{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		a:not(:last-child):after{
+			content: '|';
+			margin: 0 5px;
+		}
+		a.last:after{
+			content: none !important;
+		}
+		.cities{
+			a:not(:last-child):after{
+				content: ',';
+				margin: 0 5px;
+			}
+		}
+	}
+	.justify-content-sm-between{
+		flex-wrap:wrap;
+		@include responsivesm{
+			padding: 0;
+		}
+	}
+	.download{
+		a{
+			img{
+				margin-right: 6px;
+				height: 50px;
+				width: auto;
+				object-fit: contain;
+				box-shadow:0 6px 12px rgba(0, 0, 0, 0.04);
+				@include responsivesm{
+					height: 40px;
+
+				}
+
+			}
+		}
+	}
+}
+
+.mob-footer{
+	@extend header;
+	@extend header.mob-header;
+	display: block !important;
+	position: sticky;
+	bottom: 0;
+	border-radius: 30px 30px 0 0;
+	@include  responsivemin(1023px){
+		display: none !important;
+	}
+	@include responsivesm{
+		font-size: 13px;
+	}
+	.section-rule{
+		padding:  0;
+	}
+	.nav-list{
+		&:last-child{
+			margin-left: 0 !important;
+		}
+		label{
+			color: #fff;
+			display: block;
+			margin: 0;
+			text-align: center;
+		}
+		.nav-item.active{
+			label, path{
+				color: $secondary-color;
+				fill: $secondary-color;
+			}
+		}
+		.nav-item{
+			@include responsivesm{
+				padding: 0;
+			}
+			svg{
+				@include responsivesm{
+					height: 20px;
+				}
+			}
+		}
+	}
+	.nav{
+		justify-content: space-around !important;
+	}
+}
+
+.login-form{
+	.logo img{
+		height: 2.5em;
+	}
+	.modal-content{
+		padding-top: 2em;
+		@include border-radius;
+		overflow: hidden;
+		border:0;
+		@include box-shadow;
+		@include responsivesm{
+			padding-top: 1em;
+		}
+	}
+	.modal-title{
+		font-size: 1.8em;
+		position: relative;
+		margin:0 32px;
+		margin-bottom: 12px;
+
+		@include responsivesm{
+			margin:0 14px;
+			margin-bottom: 4px;
+			font-size: 20px;
+			// margin-left: 0;
+		}
+		
+	}
+	.modal-header{
+		margin-bottom: 1em;
+		button{
+			span{
+				font-size: 22px;
+				vertical-align: bottom;
+			}
+		}
+
+	}
+	.modal-header, .modal-body, .modal__footer{
+		border:0;
+		// padding: 0;
+		padding:0 2em;
+		@include responsivesm{
+			padding:0 1em;
+		}
+	}
+	.modal-body{
+		padding:1em 2em;
+		@include responsivesm{
+			padding:1em 1em;
+		}
+	}
+	.form-group{
+		margin-bottom: 1.5em;
+	}
+	.form-control{
+		outline: 0;
+		box-shadow: 0;
+		border: 2px solid #cecece;
+		height: 55px;	
+	}
+	textarea.form-control{
+		height: 120px;
+	}
+	.form{
+		button{
+			@include button;
+		}
+	}
+	.d-flex{
+		margin: 1em 0;
+		button{
+			@include button;
+			background-color: #fff !important;
+			border: 1px solid #fff;
+			@include box-shadow;
+			&.facebook{
+				color: #2e89ff;
+				border-color: #2e89ff;
+				margin-right: 1em;
+				&:hover{
+					box-shadow: 0px 8px 18px rgba(46, 137, 255, 0.3);
+					background-color: rgb(46, 137, 255)  !important;
+					color: #fff  ;
+				}
+			}
+			&.google{
+				color: #ea4335;
+				border-color: #ea4335;
+				&:hover{
+					box-shadow: 0px 8px 18px rgba(234, 67, 53, 0.29) ;
+					background-color: #ea4335 !important;
+					color: #fff  ;
+				}
+			}
+		}
+	}
+	p, span{
+		font-size: 14px;
+		margin-bottom: 2px;
+		&.mb-0{
+			a{
+				color: $red;
+			}
+		}
+	}
+	.modal__footer{
+		padding:1em 2em;
+		background-color:$primary-color;
+		border-radius:30px 30px 3px 3px;
+		color: #fff;
+		@include responsivesm{
+			padding: 1em;
+			border-radius:16px 16px 3px 3px;
+		}
+		a{
+			display: block;
+			align-item:center;
+			transition: none;
+			&:hover{
+				p, span{
+					color: #fff;
+					transition: none;
+				}
+			}
+		}
+		img{
+			height: 40px;
+			width: auto;
+			margin-right: 20px;
+			object-fit: contain;
+		}
+		.card__title{
+			font-size: 20px;
+			margin-bottom: 0px;
+			color: #fff;
+		}
+		span{
+			font-size: 30px;
+			margin-left: auto;
+		}
+		p, span{
+			opacity: 0.6;
+		}
+		
+	}
+
+}
+
+.relative{
+	// display: none !important;
+	visibility: hidden !important;
+}

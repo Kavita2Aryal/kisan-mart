@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.063" height="15.51" viewBox="0 0 18.063 15.51">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="-0.114" x2="0.5" y2="1.191" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#15afb7"/>
+      <stop offset="1" stop-color="#1a3fcf"/>
+    </linearGradient>
+  </defs>
+  <g id="cart" transform="translate(-3339.892 -710.444)">
+    <path id="Union_52" data-name="Union 52" d="M4032.705-1223.3a1.255,1.255,0,0,1,1.256-1.255,1.255,1.255,0,0,1,1.255,1.255,1.255,1.255,0,0,1-1.255,1.255A1.255,1.255,0,0,1,4032.705-1223.3Zm-4.936,0a1.255,1.255,0,0,1,1.256-1.255,1.255,1.255,0,0,1,1.255,1.255,1.255,1.255,0,0,1-1.255,1.255A1.255,1.255,0,0,1,4027.77-1223.3Zm-.775-2.493a.853.853,0,0,1-.835-.677l-1.993-9.377h-2.42a.854.854,0,0,1-.854-.855.854.854,0,0,1,.854-.854h3.112a.853.853,0,0,1,.834.676l.523,2.46h12.3a.437.437,0,0,1,.414.584l-2.249,7.377a.966.966,0,0,1-.71.624.85.85,0,0,1-.26.041Z" transform="translate(-681 1948)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

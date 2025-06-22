@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.589" height="21.964" viewBox="0 0 20.589 21.964">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#15afb7"/>
+      <stop offset="1" stop-color="#1a3fcf"/>
+    </linearGradient>
+  </defs>
+  <g id="medicine" transform="translate(-809 -794)">
+    <g id="Group_19" data-name="Group 19" transform="translate(809 794)">
+      <path id="Path_84" data-name="Path 84" d="M811.574,800.521v10.3a2.574,2.574,0,0,0,0,5.148h3.861a2.575,2.575,0,0,0,2.228-1.287h4.273a4.5,4.5,0,1,0,3.8-7.674v-6.483h-2.574v-1.287h1.287V794H812.861v5.234h1.287v1.287Zm-1.287,12.87a1.288,1.288,0,0,1,1.287-1.287h1.287v2.574h-1.287a1.288,1.288,0,0,1-1.287-1.287Zm5.148,1.287h-1.287V812.1h1.287a1.287,1.287,0,0,1,0,2.574Zm0-3.861h-2.574v-6.435h11.583V807a4.5,4.5,0,0,0-3.426,6.387h-3.009a2.577,2.577,0,0,0-2.574-2.574Zm7.377,2.918a3.223,3.223,0,0,1-.409-4.049l4.459,4.459a3.223,3.223,0,0,1-4.049-.409Zm4.959-.5-4.458-4.458a3.218,3.218,0,0,1,4.458,4.458Zm-3.328-10.14H812.861v-1.287h11.583Zm-1.287-5.148h-1.373v-2.66h1.373Zm-6.521,0v-2.66h1.287v2.66Zm2.574-2.66H820.5v2.66H819.21Zm-5.062,0h1.2v2.66h-1.2Zm1.287,3.947h6.435v1.287h-6.435Zm0,0" transform="translate(-809 -794)" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Path_85" data-name="Path 85" d="M991.574,1066h-1.287v1.287H989v1.287h1.287v1.287h1.287v-1.287h1.287v-1.287h-1.287Zm0,0" transform="translate(-172.278 -260.332)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

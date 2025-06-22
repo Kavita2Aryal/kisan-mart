@@ -1,0 +1,214 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+
+@font-face {
+	font-family: "hero";
+	src: url(./css/Hero/Hero-Bold.otf) format("opentype");
+	font-weight: bold;
+}
+@font-face {
+	font-family: "hero";
+	src: url(./css/Hero/Hero-Light.otf) format("opentype");
+	font-weight: light;
+}
+@font-face {
+	font-family: "hero";
+	src: url(./css/Hero/Hero-Regular.otf) format("opentype");
+	font-weight: regular;
+}
+/* green color  #269116
+yellow color #E2E22B
+*/
+/* resetcss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+html {
+	font-size: 16px; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+	-ms-text-size-adjust: 100%; /* 2 */
+}
+a:active,
+a:hover {
+	outline: 0;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* 1 */
+	margin: 0; /* 2 */
+	vertical-align: baseline; /* 3 */
+	*vertical-align: middle; /* 3 */
+}	
+
+
+
+
+body{
+	
+	font-family: 'hero', Arial, sans-serif;
+	font-weight: regular;
+	position: relative;
+	scroll-behavior: smooth;
+	color: #fff;
+	background-color: #f9f9f3;
+
+}
+
+main {
+	/* background-image: url('./wallpaper.png'); */
+	background-image: url('./vegcollection.jpg');
+
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	object-fit: cover;
+	background-position: left bottom;
+}
+.section-rule{
+	width: 87%;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.logo img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+.logo{
+	display: inline-block;
+	width: 15rem;
+
+}
+h1 {
+	font-size: 9rem;
+	font-weight: bold;
+	margin: 5rem 0 2rem 0;
+	font-family: 'Piedra','hero', cursive;
+}
+.yellow{
+	color: #E2E22B;
+}
+button{
+	border: 0;
+	border-left: 5px solid #e2e22b;
+	background-color: transparent;
+	color: #e2e22b;
+	padding: 10px 30px;
+	font-size: 3.3em;
+	font-family: 'hero', Arial, sans-serif;
+	font-weight: bold;
+	text-align: left;
+}
+h4{
+	font-size: 2rem;
+	margin: 1.5em 0 1em 0;
+	color: #fff;
+	display: inline-block;
+	border-left: 6px solid #e2e22b;
+	padding: 1em;
+	background-image: linear-gradient(90deg ,transparent 40%,#b0b001);
+}
+.d-flex{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-wrap: wrap;
+}
+.d-flex a{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #fff;
+	font-size:  1.5rem;
+	margin-right: 2rem;
+	margin-bottom: 1rem;
+
+
+}
+.d-flex a:hover{
+	color: #E2E22B;
+}
+.d-flex a:hover path{
+	fill: #E2E22B;
+}
+svg{
+	height: 1.5rem;
+	width: auto;
+	object-fit: contain;
+	margin-right: 6px;
+}
+label{
+	cursor: pointer;
+}
+.d-flex a i{
+	margin-right: 6px;
+}
+
+
+@media screen and (max-width: 420px) {
+	main{
+		background-position: center;
+	}
+	h1{
+		font-size: 5rem;
+	}
+	button{
+		font-size: 1.3em;
+	}
+	h4{
+		font-size: 20px;
+	}
+	.d-flex a{
+		margin-bottom: 1rem;
+		font-size: 20px;
+		margin-right: 0;
+	}
+}
+@media screen and (max-width: 340px) {
+	.logo{
+		width: 8rem;
+	}
+	h1{
+		font-size: 4rem;
+	}
+	button{
+		padding: 10px;
+		padding-right: 0;
+	}
+	h4{
+		font-size: 20px;
+	}
+	.d-flex a{
+		margin-bottom: 1rem;
+		font-size: 20px;
+		margin-right: 0;
+	}
+}

@@ -1,0 +1,2209 @@
+@import './style';
+
+.breadcrumb{
+	background-color: transparent;
+	color: $dark;
+	margin-bottom: 0;
+	padding: 1.2rem 0rem;
+	font-weight: bold;
+	
+	a:hover{
+		color: $primary-color;
+	}
+	@include responsive(801px){
+		padding: 14px 0rem;
+
+	}
+	.breadcrumb-item.active{
+		color: inherit;
+	}
+}
+
+.breadcrumb-item + .breadcrumb-item {
+	padding-left:4px;
+	&::before {
+		content: ">";
+		color: inherit;
+		padding-right:4px;
+	}
+}
+.rest-rule{
+	@include rest-style;
+}
+
+// other page-menu
+.secondary-menu.common-sticky{
+	.nav-item.ml-auto.d-flex{
+		display: none !important;
+	}
+
+	.dropdown.hide:hover a {
+		background-color: #fff !important;
+	}
+
+	.white_logo{
+		display: none !important;
+	}
+
+	.left__part label{
+		display: initial;
+	}
+
+	.dropdown__wrapper{
+		background-color: $secondary-color;
+	}
+
+	.dropdown.hide:hover a{
+		background-color: $secondary-color;
+	}
+
+}
+
+
+.common__bread.section-rule{	
+	padding-top: 0;
+}
+
+.category-page{
+	.screen{
+		@include responsivemd{
+			margin-bottom: 0;
+		}
+		aside:last-child{
+			padding-top: 0 !important;
+			padding-right: 0px !important;
+			padding-bottom: 0px !important;
+			.title-wrapper{
+				margin-bottom: 1.5em;
+				@include responsivemmd{
+					flex-wrap: wrap;
+					justify-content: flex-start;
+				}
+				.title__part {
+					@include responsivemmd{
+						flex-basis: 100%;
+						margin-bottom: 10px;
+					}
+				}
+				p, label {
+					font-weight: normal;
+					margin-bottom: 0;
+					color: #666;
+					@include responsivesm{
+						font-size: 13px;
+					}
+				}
+				.form-group{
+					// margin-left: 2em;
+					margin-bottom: 0;
+					background-color: #fff;
+					padding:0 1em;
+					border-radius: 8px;
+					align-items: center;
+					height: 50px;
+					position: relative;
+					@include responsivexsm{
+						height: 43px;
+					}
+					.form-control{
+						height: 100%;
+						border: 0;
+						padding: 0;
+						box-shadow: none;
+						font-weight: bold;
+						// width: 150px;
+						font-size: 14px;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+				}
+				.filter-btn{
+					display: none;
+					@include responsivemd{
+						display: block;
+						@include button;
+						background-color: #fff !important;
+						box-shadow: none;
+						margin-left: 1em;
+					}
+				}
+				label {
+					cursor: pointer;
+					white-space: nowrap;
+					margin-bottom: 0;
+					font-size: 14px;
+				}
+			}
+		}
+		article img{
+			@include image;
+		}
+		
+		.nav-tabs{
+			border:0;
+			align-items: center;
+			.nav-link{
+				border: 0;
+				background-color: #fff;
+				border-radius: 8px;
+				margin-left: 10px;
+				height: 50px;
+				width: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				svg{
+					width: auto;
+					height: 45px;
+				}
+				svg path{
+					fill: $primary-color;
+				}
+				&.active{
+					background-color: $primary-color;
+					svg path{
+						fill:#fff;
+					}
+				}
+			}
+		}
+
+		.fresh-vegetables{
+			article{
+				&:nth-child(4n){
+					@include article;
+				}
+				&:nth-child(4n+1){
+					@include article;
+				}
+				&:nth-child(3n){
+					padding-right: 0px;
+					@include responsiveboth(1026px,1020px){
+						@include article;
+					}
+					@include responsivemmd{
+						@include article;
+					}
+				}
+				&:nth-child(3n+1){
+					padding-left: 0px;
+					@include responsiveboth(1026px,1020px){
+						@include article;
+					}
+					@include responsivemmd{
+						@include article;
+					}
+
+				}
+				&:nth-child(2n){
+					
+					@include responsiveboth(1026px,1020px){
+						padding-right: 0px;
+					}
+					@include responsivemmd{
+						padding-right: 0px;
+					}
+				}
+				&:nth-child(2n+1){
+					
+					@include responsiveboth(1026px,1020px){
+						padding-left: 0px;
+					}
+					@include responsivemmd{
+						padding-left: 0px;
+					}
+				}
+
+			}
+		}
+
+		.sticky{
+			background-color: #fff;
+			@include border-radius;
+			overflow: hidden;
+			@include responsivemd{
+				border-radius: 30px 30px 0 0;
+				padding: 20px 1.1em;
+			}
+			@include responsivesm{
+				padding: 9px;
+			}
+			hr{
+				margin: 0;
+			}
+			ul, .outer_link{
+				padding: 10px 1.1em;
+				@include responsivexsm{
+					padding: 6px 10px;
+				}
+			}
+			.section-title{
+				font-size: 21px;
+				@include responsivexsm{
+					font-size: 16px;
+				}
+			}
+			.title-wrapper{
+				a{
+					color: $red;
+					font-size: 80%;
+				}
+			}
+			&> ul:not(:first-child):not(:last-child){
+				padding: 0 !important;
+				font-size: 16px;
+			}
+			ul{
+				ul{
+					color: #888;
+					.nav-link{
+						padding: 5px 0;
+						&.active{
+							color: $primary-color;
+						}
+						span{
+							margin-left: auto;
+						}
+					}
+				}
+			}
+			.outer_link{
+				&.active{
+					background-color: rgba($primary-color, .06);
+					color: $primary-color;
+					border-left: 3px solid $secondary-color;
+				}
+			}
+			.nav-link{
+				display: flex;
+				align-items: center;
+				&[data-toggle="collapse"]::after {
+					content: "\f078";
+					font-size: 12px;
+					margin-left: 3px;
+					transform: rotate(180deg);
+					font-family: "Font Awesome 5 Free";
+					font-style: normal;
+					font-variant: normal;
+					text-rendering: auto;
+					line-height: 1;
+					font-weight: 900;
+					-webkit-transition: 0.3s ease;
+					transition: 0.3s ease;
+					border: 0;
+					margin-left: auto;
+					vertical-align: middle;
+				}
+				&.collapsed::after{
+					transform: rotate(0deg);
+				}
+				&.more{
+					color: $primary-color;
+				}	
+			}
+		}
+		.brand{
+			input[type=checkbox]{
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+				&::checked{
+
+				}
+			}
+			label{
+				padding-left: 2em;
+				margin: 0;
+			}
+			li{
+				position: relative;
+			}
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 22px;
+				width: 22px;
+				border: 2px solid rgba($primary-color, .17i);
+				border-radius: 6px;
+				pointer-events: none;
+				&:after {
+					content: "";
+					position: absolute;
+					display: none;
+					left: 7px;
+					top: 4px;
+					width: 5px;
+					height: 10px;
+					border: solid #fff;
+					border-width: 0 2px 2px 0;
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+			}
+			input:checked ~ .checkmark {
+				background-color: $primary-color;
+				&:after{
+					display: block;
+				}
+			}		
+		}
+		.noUi-target{
+			box-shadow: none;
+			@include border-radius;
+			height: 6px;
+			border:0;
+			background-color: #efefef;
+			margin:.5em 0 2em;
+			.noUi-connect{
+				background-color: $primary-color;
+			}
+			.noUi-handle {
+				width: 18px;
+				height: 18px;
+				right: -17px;
+				top: -6px;
+				border-radius: 50%;
+				border: 0;
+				background-color: $primary-color;
+				box-shadow: none;
+				&:before{
+					content: none;
+				}
+				&:after{
+					height: 8px;
+					width: 8px;
+					background-color: #fff;
+					left: 5px;
+					border-radius: 50%;
+					top: 5px;
+
+				}
+			}
+		}
+		ul>.nav-link.outer_link{
+			font-size: 1.2em;
+			@include responsivexsm{
+				font-size: 16px;
+			}
+		}
+		.flex__parent{
+			.form-group{
+				position: relative;
+				border: 1px solid #ddd;
+				border-radius: 6px;
+				padding: 10px 2px;
+				width: 46%;
+				margin-right: 3%;
+				margin-bottom: 0;
+				font-size: 14px;
+				select{
+					border: 0;
+					box-shadow: none;
+					width: 100%;
+					background-color: transparent;
+				}
+			}
+		}
+
+		// responsive
+		.filter{
+			@include responsivemd{
+				margin-bottom: 0;
+				position: fixed;
+				z-index: 10009;
+				width: 100%;
+				left: 0;
+				bottom: -100%;
+				@include transition-out;
+				&.show{
+					@include transition-out;
+					bottom: 0%;
+				}
+
+			}
+			.nav.flex-column.accordion, .sticky> .nav-item{
+				@include responsivemd{
+					display: none !important;
+				}
+			}
+
+		}
+	}
+}
+
+.pagination{
+	.page-item{
+		.page-link{
+			height: 50px;
+			min-width: 50px;
+			@include border-radius;
+			background-color: #fff;
+			text-align: center;
+			line-height: 3;
+			margin-right: 1em;
+			border:0;
+			color: $dark;
+			padding: 0px 1.4em;
+			display: block;
+			box-shadow: none;
+			@include responsivesm{
+				min-width: auto;
+				height: auto;
+				border-radius: 4px;
+				line-height: 1;
+				font-size: 13px;
+				padding: 7px;
+				margin-right: 6px;
+
+			}
+		}
+		&.active{
+			.page-link{
+				border:2px solid $primary-color;
+				background-color: transparent;
+				color: $primary-color;
+			}
+		}
+		&.next{
+			.page-link{
+				background-color: $primary-color;
+				color: #fff;
+			}
+		}
+
+	}
+}
+
+.sticky{
+	position: sticky;
+	top: 85px;
+	@include transition-out;
+	
+	@include responsivemd{
+		position: relative;
+		top: 0 !important;
+	}
+}
+
+.cursorshade, .magnifier{
+	@include border-radius;
+	border-color: $primary-color !important;
+}
+
+
+.single-page{
+
+	.card__wrapper{
+		padding: 20px 5px;
+		background-color: #fff;
+		@include border-radius;
+		@include responsivemd{
+			padding: 0;
+			background-color: transparent;
+			border-radius: 0;
+		}
+	}
+	.products{
+		img{
+			@include image;
+		}
+		.slider-for{
+			margin-bottom: 12px;
+			@include responsivemd{
+				margin-bottom: 0;
+			}
+			.card-image{
+				height: 550px;
+				@include border-radius;
+				overflow: hidden;
+				@include responsivemd{
+					border-radius: 0;
+					height: 500px;
+				}
+
+				@include responsivemmd{
+					height: 400px;
+				}
+				@include responsivesm{
+					height: 375px;
+				}
+				a{
+					height: 100%;
+					width: 100%;
+					display: block;
+				}
+			}
+		}
+		.slider-nav{
+			width: 90%;
+			@include responsivemd{
+				display: none;
+			}
+			.card-image{
+				height: 100%;
+			}
+			@include slicknav;
+			.slick-arrow{
+				background-color: #fff !important;
+				box-shadow: rgba(70, 70, 70, 0.08) 3px 0px 15px;
+				opacity: 1;
+				height: 40px;
+				width: 40px;
+				i{
+					font-size: 2rem;
+				}
+			}
+			img{
+				transition: .6s ease;
+			}
+			.item {
+				
+				height: 70px !important;
+				width: 100px !important;
+				cursor: pointer;
+				
+				.card-image{
+					border-radius: 6px;
+					margin-right: 9px;
+					overflow: hidden;
+				}
+				&.slick-current{
+					.card-image{
+						border:2px solid $primary-color;
+						overflow: hidden;
+						padding: 6px;
+						@include transition-out;
+						img{
+							border-radius: 4px;
+
+						}
+					}
+
+				}
+			}
+			.slick-track {    
+				margin-left:0;
+			}
+		}
+
+		.card__title{
+			font-size: 40px;
+			font-weight: bold;
+			margin-bottom: 0;
+			@include responsivemd{
+				font-size: 28px;
+			}
+			@include responsivexsm{
+				font-size: 24px;
+			}
+		}
+		.stock{
+			font-size: 1.3em;
+			color: #6bcb35;
+			font-weight: bold;
+			svg{
+				height: 1.3em;
+				width: auto;
+				object-fit: contain;
+				path{
+					fill:#6bcb35
+				}
+				&:last-child{
+					height: 1em;
+					path{
+						fill:$primary-color;
+					}
+				}
+			}
+			span{
+				vertical-align: middle;
+				margin: 0 6px;
+			}
+		}
+
+		.price__title, .price{
+			color: $dark;
+			font-size: 1.5em;
+			.price{
+				color: $primary-color;
+				font-weight: bold;
+				margin-right: 8px;
+			}
+			@include responsivexsm{
+				margin-bottom: 0;
+			}
+			del{
+				@include responsive(360px){
+					font-size: 13px;
+				}
+			}
+		}
+		small{
+			margin-left: 12px;
+			font-size: 1em;
+			color: #777;
+			@include responsive(360px){
+				margin-left: 4px;
+			}
+
+		}
+		.share{
+			white-space: nowrap;
+			button{
+				background-color: transparent;
+				border: 0;
+				box-shadow: none;
+				color: $dark;
+				font-weight: bold;
+				font-size: 17px;
+				padding: 12px;
+				@include border-radius;
+				&.wishlist{
+					background-color: rgba($red, 0.04);
+					&:hover{
+						@include transition-in;
+						box-shadow: 0 0 25px rgba($red, 0.2);
+						svg{
+							@include transition-in;
+							transform: scale(1.1);
+						}	
+					}
+					&.active{
+						@include transition-out;
+						background-color: $red;
+						path{
+							@include transition-out;
+							fill:#fff;
+						}
+					}
+				}
+				&.share{
+					background-color:rgba($primary-color,0.06); 
+					margin-right: 6px;
+					svg{
+						fill: $primary-color;
+						transform: rotateY(180deg) scale(1.2);
+						transform-origin: bottom;
+					}
+				}
+			}
+		}
+		.d-flex{
+			margin-bottom: 1em;
+			justify-content: space-between;
+			@include responsivexsm{
+				margin-bottom: 0;
+			}
+		}
+
+		.action{
+			span{
+				vertical-align: middle;
+			}
+			button{
+				@include button;
+				font-size: 16px;
+				margin-right: 1em;
+				font-weight: bold;
+				svg{
+					height: 26px;
+					width: auto;
+					margin-right: 4px;
+					@include responsive(360px){
+						height: 20px;
+					}
+				}
+				@include responsivemd{
+					margin-right: 0;
+					width: 43%;
+				}
+				@include responsivexsm{
+					width: auto;
+				}
+				@include responsive(360px){
+					padding: 10px 12px;
+				}
+			}
+			.package{
+				background-color: transparent !important;
+				color: $dark !important;
+				border: 2px solid $primary-color;
+				box-shadow: none;
+				@include responsivelg{
+					margin-bottom: 12px;
+				}
+				@include responsivemd{
+					margin-bottom: 0;
+				}
+			}
+			@include responsivelg{
+				flex-wrap: wrap;
+			}
+			@include responsivemd{
+				flex-wrap: nowrap;
+				position: fixed;
+				z-index: 999;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: #fff;
+				margin-bottom: 0;
+				padding: 1em 10px;
+				justify-content: space-around;
+			}
+		}
+		.qty{
+			label{
+				color: #707070;
+			}
+			.form-group{
+				border: 2px solid rgba($primary-color,0.13);
+				background-color: #fff;
+				color: $dark;
+				padding: 4px;
+				display: flex;
+				@include border-radius;	
+				@include responsivexsm{
+					margin-bottom: 0;
+				}
+			}
+			button, .form-control{
+				width: 38px;
+				height: 38px;
+				text-align: center;
+				border: 0 !important;
+				box-shadow: none !important;
+				font-size: 1.2em;
+				font-weight: bold;
+				line-height: 38px;
+				@include responsive(360px){
+					width: 35px;
+					height: 35px;
+					line-height: 35px;
+				}
+			}
+			.form-control{
+				background-color: #fff;
+			}
+			button{
+				background-color: rgba($primary-color,0.1);
+				color: $primary-color;
+				@include border-radius;
+			}
+		}
+		.bottom__wrapper{
+			font-weight: bold;
+			margin: 2em 0;
+			@include responsivesm{
+				flex-wrap: wrap;
+				margin: 1em 0;
+			}
+			@include responsivexsm{
+				margin-bottom: 0;
+			}
+			.delivery{
+				border:2px solid rgba($primary-color, 0.1);
+				color: #888;
+				padding: 14px;
+				cursor: text;
+				background-color: transparent;
+				@include border-radius;
+				text-align: left;
+				margin-right: 1.4em;
+				display: flex;
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 1.3;
+				@include responsivesm{
+					margin-right: 0;
+					margin-bottom: 1em;
+				}
+				@include responsivexsm{
+					margin-bottom: 6px;
+				}
+				svg{
+					height: auto;
+					width: 60px;
+					margin-right: 12px;
+					@include responsivesm{
+						width: 26px;
+						margin-right: 8px;
+					}
+
+				}
+			}
+			svg{
+				margin-right: 6px;
+			}
+			label{
+				display: block;
+				margin-bottom: 10px;
+			}
+			.form-inline{
+				@include responsivemd{
+					display: block;
+				}
+				@include responsivesm{
+					width: 100%;
+				}
+			}
+
+			.form-group{
+				flex-wrap: nowrap;
+				@include responsivesm{
+					display: flex;
+				}
+			}
+			.form-control, button[type=submit]{
+				border:0;
+				box-shadow: none;
+				font-weight: bold;
+				height: 45px;
+				padding: 0 1em;
+			}
+			.form-control{
+				background-color: rgba($primary-color, 0.06);
+				color: #707070;
+				border-radius: 10px 0 0 10px;
+				flex-grow: 2;
+				max-width: 200px;
+				@include responsivelg{
+					max-width: 140px;
+				}
+				@include responsivemd{
+					max-width: 200px;
+				}
+			}
+			button[type=submit]{
+				background-color: $secondary-color;
+				color: $primary-color;
+				border-radius: 0 10px 10px 0;
+			}
+		}
+		.para{
+			color: #666;
+			font-size: 1.1em;
+			line-height: 1.7;
+			&.hide{
+				&> *{
+					display: none;
+				}
+				p:first-child{
+					@include lineclamp(3);
+					display: -webkit-box !important ;
+				}
+				&.show p:first-child{
+					display: block !important;
+					-webkit-line-clamp:none !important;
+				}
+			}
+		}
+		.readmore{
+			color: $primary-color;
+			font-size: 1.2em;
+			font-weight: bold;
+			i{
+				vertical-align: middle;
+			}
+		}
+	}
+
+	// responsive md
+	&> .section-rule{
+		@include responsivemd{
+			width: 100%;
+		}
+		.breadcrumb{
+			@include responsivemd{
+				display: none;
+			}
+		}
+		.col-12.col-lg-6{
+			@include responsivemd{
+				padding: 0;
+			}
+		} 
+	}
+	.slick-dots{
+		bottom: 3em;
+		@include responsivesm{
+			bottom: 4em;
+		}
+		li{
+			height: 13px;
+			width: 13px;
+			background-color: #fff;
+			border-radius: 50%;
+			opacity: .6;
+			&.slick-active{
+				opacity: 1;
+			}
+		}
+		button{
+			display: none;
+		}
+	}
+	.col-lg-6.card__body{
+		@include responsivemd{
+			background-color: #fff;
+			padding: 1.3em !important;
+			border-radius: 30px 30px 0 0;
+			margin-top: -40px; 
+		}
+	}
+
+	& ~ .mob-footer{
+		@include responsivemd{
+			display: none !important;
+		}
+	}
+	& ~ footer{
+		// margin-bottom: 5rem;
+		@include responsivexsm{
+			margin-bottom: 6rem;
+		}
+	}
+
+}
+
+li.nav-item {
+	list-style: none;
+}
+
+// cart-page
+.cart-page{
+	
+	.remove{
+		color: #db462a;
+		font-weight: bold;
+		position: absolute;
+		top:-10px;
+		right: 0;
+		@include responsivesm{
+			top: -5px;
+			opacity: .6;
+		}
+
+		label{
+			@include responsivesm{
+				display: none;
+			}
+		}
+		i{
+			font-size: 22px;
+			vertical-align: bottom;
+			@include responsivesm{
+				font-size: 18px;
+			}
+		}
+	}
+
+	aside:first-child{
+		order:2;
+	}
+	.screen{
+		aside:last-child{
+			padding-left: 0 !important;
+			padding-right: 1.5em !important;
+			@include responsivemd{
+				padding-right: 0 !important;
+			}
+			.title-wrapper{
+				@include responsivemmd{
+					margin-bottom: 0.5em;
+				}
+			}
+		}
+		
+	}
+	.sticky{
+		background-color: transparent !important;
+		@include responsivemd{
+			border-radius: 0 !important;
+			padding: 0 !important;
+		}
+		.section-title{
+			margin-bottom: 0 !important;
+		}
+		.nav{
+			padding: 1.1em !important;
+			margin-bottom: 1.1em;
+			@include border-radius;
+
+			hr{
+				margin: 10px 0;
+				border-color: rgba($primary-color,.06);
+				&.dotted{
+					border-style: dashed;
+				}
+			}
+			.nav-link{
+				justify-content: space-between;
+				width: 100%;
+				font-size: 16px;
+				color: #888;
+				padding: 4px 0;
+				&.total{
+					color: $dark;
+				}
+			}
+			button{
+				@include button;
+				font-size: 16px;
+				width: 100%;
+				margin: 12px 0;
+				padding: 1em;
+				@include responsivemd{
+					margin: 0;
+				}
+			}
+			label{
+				color: $primary-color;
+				font-size: 16px;
+				margin: 0 auto;
+				width: 67%;
+				@include responsivelg{
+					width: 100%;
+				}
+			}
+
+		}
+		p{
+			color: #606060;
+			@include responsivelg{
+				margin-left: 0px;
+				vertical-align: bottom;
+				font-size: 15px;
+			}
+			span{
+				color: $primary-color;
+				vertical-align: middle;
+			}
+		}
+	}
+	.filter{
+		position:static !important;
+		z-index: 1 !important;
+		@include responsivemd{
+			order:0 !important;
+		}
+	}
+	.fresh-vegetables{
+		.card_title {
+			font-size: 21px;
+			font-weight: bold;
+			margin-bottom: 10px;
+			@include responsivexsm{
+				font-size: 18px;
+				margin-bottom: 4px;
+			}
+		}
+		.card__horizontal{
+			border: 0;
+			@include border-radius;
+			flex-direction: row;
+			width: 100%;
+			flex-wrap: nowrap;
+			padding: 1.3em;
+			align-items: center;
+			@include card__margin;
+			@include responsivemmd{
+				padding: 1em;
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.card__img{
+			width: 140px;
+			height: 130px;
+			@include border-radius;
+			margin-right: 2em;
+			@include responsivemmd{
+				margin-right: 8px;
+			}
+			@include responsivesm{
+				display: none;
+			}
+		}
+		img{
+			@include image;
+
+		}
+		.card__body{
+			padding: 0;
+			position: relative;
+			flex-grow: 2;
+			@include responsivesm{
+				width: 100%;
+			}
+		}
+		.card__top{
+			width: 400px;
+			@include responsivesm{
+				width: 100%;
+			}
+		}
+		.price{
+			b{
+				color: $primary-color;
+				
+			}
+			small{
+				color: #5ecf43;
+				font-weight: bold;
+				margin-left: 1em;
+			}
+			& + p{
+				color: #888;
+				margin-bottom: 0;
+			}
+		}
+		.qty{
+			label{
+				color: #888;
+				margin-bottom: 10px;
+
+			}
+			.form-group{
+				border: 2px solid rgba($primary-color,0.13);
+				background-color: #fff;
+				color: $dark;
+				padding: 4px;
+				display: flex;
+				@include border-radius;	
+				width: auto !important;
+				height: auto;
+			}
+			button, .form-control{
+				width: 38px;
+				height: 38px;
+				text-align: center;
+				border: 0 !important;
+				box-shadow: none !important;
+				font-size: 1.2em;
+				font-weight: bold;
+				line-height: 38px;
+				position: static !important;
+				@include responsive(360px){
+					width: 35px;
+					height: 35px;
+					line-height: 35px;
+					font-size: 1em;
+				}
+			}
+			.form-control{
+				background-color: #fff;
+				padding: 0;
+				text-indent: 0;
+			}
+			button{
+				background-color: rgba($primary-color,0.1);
+				color: $primary-color;
+				@include border-radius;
+			}
+		}
+	}
+
+	.mob-input{
+		width: 100%;
+		@include responsivemd{
+			position: fixed;
+			z-index: 999;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: #fff;
+			margin-bottom: 0;
+			padding: 1em 10px;
+			justify-content: space-around;
+		}
+	}
+	& ~ .mob-footer{
+		@include responsivemd{
+			display: none !important;
+		}
+	}
+	& ~ footer{
+		// margin-bottom: 5rem;
+		@include responsivexsm{
+			margin-bottom: 6rem;
+		}
+	}
+}
+
+
+// checkout-page
+.checkout{
+
+	aside{
+		&:first-child{
+			width: 30%;
+			@include responsivemd{
+				order: 2 !important;
+				margin-top: 30px;
+			}
+		}
+		&:last-child{
+			width: 70%;
+		}
+	}
+	.fresh-vegetables{
+		@include responsivesm{
+			display: none;
+		}
+		.card__horizontal{
+			padding: 0;
+			box-shadow:none;
+			.card_title {
+				font-size: 15px;
+				font-weight: normal;
+				margin-bottom: 0px;
+				a{
+					padding: 0;
+					@include lineclamp(1);
+				}
+			}
+			.card__top {
+				width: 100%;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			.card__img {
+				width: 70px;
+				height: 70px;
+				border-radius: 5px;
+				margin-right: 10px;
+				min-width: 70px;
+			}
+			.price{
+				font-size: 14px;
+				margin: 0;
+				margin-right: 10px;
+			}
+			.qty .form-group{
+				padding: 0;
+				border: 0;
+				button, .form-control{
+					margin: 0;
+					padding: 0;
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+
+	.account{
+		.card{
+			padding: 2em;
+
+			border-radius: 6px;
+			@include responsivesm{
+				padding: 1em;
+			}
+		}
+		.default{
+			background-color: $dark;
+			border:0;
+			// padding: 2em;
+			@include responsivesm{
+				margin-bottom: 10px;
+			}
+			color: #d4d4d4;
+			ul{
+				@include ul;
+			}
+		}
+		a.card{
+			border:none;
+			justify-content: center;
+			align-items: center;
+			box-shadow:rgba(38,145,22,0.05) 0px 0px 15px !important;
+			height: 100%;
+
+		}
+	}
+	.payment{
+		
+		.custom-radio{ 
+			box-shadow:rgba(38,145,22,0.05) 0px 0px 15px !important;
+			background-color: #fff;
+			margin: 10px;
+			border-radius: 6px;
+			@include responsivesm{
+				margin: 4px;
+			}
+			&.active{
+				background-color: $primary-color;
+				color: #fff;
+			}
+			label{
+				border:none;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				// padding: 2em;
+				height: 120px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 10px;
+				margin-right: 20px;
+				@include responsivesm{
+					height: 50px;	
+					margin-right: 10px;
+				}
+				img{
+					height: 50px;
+					width: auto;
+					filter: drop-shadow(0px 1px 1px #fff);
+					@include responsivesm{
+						height: 35px;	
+					}
+				}
+
+			}
+		}
+
+		.custom-control-input:checked ~ .custom-control-label::before {
+			color: #fff;
+			border-color: #fff;
+			background-color: #269116;
+		}
+	}
+	.mob-input{
+		margin-top: 30px;
+		button{
+			@include button;
+			width: 250px;
+			@include responsivesm{
+				width: 100%;
+			}
+		}
+		
+	}
+}
+
+
+
+.single-page, .cart-page{
+	input[type=number] {
+		outline: none !important;
+	}
+}
+
+
+
+
+.dz-error-message {
+	display: none !important;
+}
+
+.dropzone .dz-preview .dz-error-mark{
+	
+}
+.dropzone .dz-message {
+	text-align: center;
+	margin: 1em 15px 2em;
+	border: 2px dashed #bbb;
+	padding: 3em;
+	width: 100%;
+}
+
+// secondary-menu mob-menu
+
+.secondary-menu.mob-menu{
+	display: none;
+	position: sticky;
+	top: 57px;
+	z-index: 99;
+	background-color: #fff;
+	box-shadow: 0 0 4px rgba(85, 85, 85, 0.3);
+	@include responsivemd{
+		display: block;
+	}
+	@include responsive(390px){
+		top: 56px;
+	}
+	@include responsive(330px){
+		top: 52px;
+	}
+	.parent{
+		justify-content: space-between;
+		li{
+			padding: 0px;
+			a{
+				padding: 12px;
+			}
+		}
+		& > li:last-child{
+			margin: 0;
+		}
+	}
+}
+
+
+// contact-us
+.contact-us{
+	.section-title{
+		line-height: 1.6;
+		svg{
+			fill:$primary-color;
+		}
+	}
+	label{
+		font-size: 18px;
+		margin-bottom: 0;
+		@include responsivesm{
+			font-size: 14px;
+		}
+	}
+	.form-group{
+		margin-bottom: 2em;
+	}
+	.form-control {
+		outline: 0;
+		border:0;
+		border-radius:0;
+		box-shadow:none;
+		border-bottom: 1px solid #bebebe;
+		height: 50px;
+		font-size: 18px;
+		padding-left: 0;
+		width: 80%;
+		@include responsivesm{
+			height: 40px;
+			font-size: 16px;
+			width: 90%;
+		}
+
+	}
+	textarea.form-control{
+		width: 100%;
+		height: 65px;
+	}
+	button{
+		@include button;
+		margin-left: auto;
+		display: flex;
+		margin-top: 3em;
+		@include responsivesm{
+
+			margin-top: 1em;
+		}
+
+
+	}
+	.card__panel{
+		padding: 3em 2.2em;
+		background-color: rgba(38,145,22,0.06);
+		@include border-radius;
+		margin-bottom: 2em;
+		@include responsivesm{
+			padding: 1em;
+			margin-bottom: 1em;
+
+		}
+		ul{
+			@include ul;
+			a {
+				padding: 12px 0px;
+				@include responsivesm{
+					padding: 6px 0;
+				}
+
+				svg{
+					margin-right: 1em;
+					path{
+						fill:$dark;
+					}
+				}
+				&:hover{
+					svg path{
+						fill:$primary-color;
+					}
+				}
+			}
+			.download a {
+				// padding: 0;
+				img {
+					margin-right: .8em;
+					height: 50px;
+					width: auto;
+					object-fit: contain;
+					box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+					padding: 0;
+					@include responsivesm{
+						height: 40px;
+					}
+				}
+			}
+
+		}
+		.social{
+			justify-content: flex-start !important;
+			a{
+				color: #bbb;
+				font-size: 2em;
+				margin-right: 18px;
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+
+$bgwidth :calc( calc(100% - 1250px ) / 2 +  calc( calc(23 / 100) * 1250px ) ) ;
+
+.account-page{
+	background-image: linear-gradient(to right, #f2f9f1, #f2f9f1);
+	background-repeat: no-repeat;
+	background-size: $bgwidth 100%;
+	@include responsivemd{
+		background-image: none;
+	}
+	aside:first-child ul{
+		background-color: transparent;
+		font-weight: 400;
+		@include responsivemd{
+			// background-color: rgba($primary-color, 0.1);
+			padding: 0;
+			@include border-radius;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		@include responsivesm{
+			justify-content: flex-start;
+			font-size: 15px;
+
+		}
+
+
+		a {
+			padding: 1em;
+			@include border-radius;
+			@include responsivemd{
+				padding: 12px;
+			}
+			@include responsivesm{
+				padding: 10px;
+			}
+
+			svg{
+				overflow: visible;
+				margin-right: 6px;
+				vertical-align: text-bottom;
+			}
+			&.active{
+				background-color: $secondary-color;
+				color: $primary-color;
+			}
+			&.log-out{
+				color: $red;
+				@include responsivemd{
+					background-color: rgba($red, 0.1);
+					margin-top: 12px;
+					display: inline-block;	
+				}
+			}
+		}
+		.section-title{
+			font-weight: 400;
+			margin-bottom: 1em;
+			@include responsivemd{
+				margin-bottom: 12px;
+			}
+		}
+		li:first-child, li:last-child{
+			@include responsivemd{
+				width: 100%;
+			}
+		}
+		li:not(:first-child):not(:last-child){
+			@include responsivemd{
+				@include border-radius;
+				background-color: rgba($primary-color, 0.1);
+			}
+			@include responsivesm{
+				margin: 2px 4px;
+				margin-right: 0;
+
+			}
+
+		}
+		li:nth-child(2){
+			@include responsivesm{
+				margin-right: 0 !important;
+			}
+		}
+	}
+	aside:first-child{
+		@include responsivemd{
+			border-bottom: 1px solid #f2f2f2;
+			padding-bottom: 1.5em !important;
+		}
+		@include responsivesm{
+			margin-bottom: 1em;
+			padding-bottom: 1em !important;
+		}
+	}
+	.empty  {
+		margin-top: 1em;
+		padding: 2em;
+		@include box-shadow;
+		.material-icons{
+			font-size: 5rem;
+			opacity: .1;
+		}
+		.card__title{
+			@include card-title;
+		}
+	}
+	.tab-content{
+		padding-left: 2em !important;
+		@include responsivemd{
+			padding-left: 0 !important;
+		}
+		.card{
+			box-shadow:none !important;
+			margin-top: 1em;
+		}
+		.remove{
+			color: #db462a;
+			@include responsivesm{
+				opacity: .6;
+			}
+
+			label{
+				margin-bottom: 0;
+			}
+			i{
+				font-size: 22px;
+				vertical-align: bottom;
+				@include responsivesm{
+					font-size: 18px;
+				}
+			}
+		}
+		.status{
+			color: #fff;
+			@include border-radius;
+			margin: 0;
+			padding: 5px 10px;
+			@include responsivemd{
+				font-size: 13px;
+				padding: 2px 6px;
+				white-space: nowrap;
+			}
+			@include responsivesm{
+				font-size: 12px;
+
+			}
+
+
+		}
+		table{
+			background-color: #fff;
+			color: $dark;
+			button{
+				@include button;
+			}
+			td, th {
+				padding: 1em 2em;
+				vertical-align: middle;
+				@include responsivelg{
+					padding: 1em;
+				}
+				@include responsivesm{
+					padding: 12px;
+					font-size: 15px;
+
+				}
+			}
+			td{
+				color: $para;
+				font-weight: 400;
+			}
+			tr:hover{
+				background-color:$white;
+			}
+		}
+		.modal{
+			@include responsivesm{
+				z-index: 99999;
+			}
+			.modal-body{
+				.card_title {
+					font-size: 21px;
+					margin-bottom: 10px;
+					font-weight: 400;
+					@include responsivexsm{
+						font-size: 18px;
+						margin-bottom: 4px;
+					}
+				}
+				
+				.card__img{
+					// width: 100px;
+					// height: 100px;
+					// padding: 0 !important;
+					// @include border-radius;
+					// @include responsivemmd{
+					// 	margin-right: 8px;
+					// }
+					// @include responsivesm{
+					// 	display: none;
+					// }
+					
+				}
+				
+				.qty{
+					
+					.form-group{
+						border: 2px solid rgba($primary-color,0.13);
+						background-color: #fff;
+						color: $dark;
+						padding: 4px;
+						display: flex;
+						@include border-radius;	
+						width: auto !important;
+						height: auto;
+						margin: 0;
+					}
+					button, .form-control{
+						width: 38px;
+						height: 38px;
+						text-align: center;
+						border: 0 !important;
+						box-shadow: none !important;
+						font-size: 1.2em;
+						font-weight: bold;
+						line-height: 38px;
+						position: static !important;
+						@include responsive(360px){
+							width: 35px;
+							height: 35px;
+							line-height: 35px;
+							font-size: 1em;
+						}
+					}
+					.form-control{
+						background-color: #fff;
+						padding: 0;
+						text-indent: 0;
+					}
+					button{
+						background-color: rgba($primary-color,0.1);
+						color: $primary-color;
+						@include border-radius;
+						padding: 0 !important;
+					}
+				}
+				.card:hover{
+					background-color: $white;
+				}
+
+			}
+			.nav{
+				padding: 1.1em !important;
+				margin-bottom: 1.1em;
+				background-color: $white;
+				@include border-radius;
+
+				hr{
+					margin: 10px 0;
+					border-color: rgba($primary-color,.06);
+					&.dotted{
+						border-style: dashed;
+					}
+				}
+				.nav-link{
+					justify-content: space-between;
+					width: 100%;
+					font-size: 16px;
+					color: #888;
+					padding: 4px 0;
+					&.total{
+						color: $dark;
+					}
+				}
+				button{
+					@include button;
+					font-size: 16px;
+					// width: 100%;
+					margin: 0;
+					padding: 1em;
+					@include responsivemd{
+						margin: 0;
+					}
+				}
+				label{
+					color: $primary-color;
+					font-size: 16px;
+				}
+
+			}
+
+			.modal-dialog{
+				max-width: 850px;
+				width: 95%;
+
+			}
+			.modal-header{
+				.form-group{
+					margin: 0;
+					width: 90%;
+					overflow: visible;
+					background-color: transparent;
+					max-width: 250px;
+
+
+				}
+				.form-control{
+					border: 1px solid #ced4da;
+					background-color: transparent;
+				}
+				h2{
+					margin-bottom: 0;
+				}
+			}
+			.modal-footer, .modal__footer{
+				background-color: rgba($primary-color,0.1);
+				text-align: right;
+				border:0;
+				border-radius: 20px 20px 0 0;
+				button{
+					@include button;
+				}
+				button.del{
+					background-color: transparent;
+					color: $red;
+					margin-right: 2em;
+					border:0;
+					box-shadow: none;
+					padding-left: 0 !important;
+					padding-right: 0 !important;
+				}
+			}
+		}
+		&> .row{
+			@include responsivesm{
+				background-color: transparent !important;
+			}
+		}
+	}
+	
+
+	.package{
+		#new__package{
+			.form-control{
+				outline: 0;
+				box-shadow: 0;
+				border: 2px solid #cecece;
+				height: 55px;	
+				background-color: transparent;
+				outline: none;
+				box-shadow:none;
+				@include responsivesm{
+					font-size: 16px;
+					height: 45px;
+					border-width: 1px;
+				}
+			}
+		}
+		
+		button{
+			@include button;
+		}
+		
+		
+
+	}
+	.noti-tab{
+		.list-group-item{
+			background-color: transparent;
+			border-left: 0;
+			border-right: 0;
+		}
+		time{
+			opacity: .5;
+		}
+	}
+	.account{
+		.form-group{
+			margin-bottom: 1.5em;
+		}
+		.form-control{
+			outline: 0;
+			box-shadow: 0;
+			border: 2px solid #cecece;
+			height: 55px;	
+			background-color: transparent;
+			outline: none;
+			box-shadow:none;
+			@include responsivesm{
+				font-size: 16px;
+				height: 45px;
+				border-width: 1px;
+			}
+		}
+		button{
+			@include button;
+		}
+		.form-row > [class*="col-"]{
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		.card{
+			padding: 2em;
+		}
+		.default{
+			background-color: $dark;
+			border:0;
+			padding: 2em;
+			color: #d4d4d4;
+			ul{
+				@include ul;
+			}
+		}
+		a.card{
+			border:none;
+			justify-content: center;
+			align-items: center;
+			box-shadow:rgba(38,145,22,0.05) 0px 0px 15px !important;
+			background-color: transparent;
+			height: 100%;
+		}
+	}
+}
+
+
+// about-us page
+.about-us{
+	.para{
+		line-height: 2;
+	}
+	.screen{
+		background-color: #fff;
+		.section-title{
+			font-size: 2em;
+			@include responsivesm{
+				font-size: 22px;
+			}
+		}
+		.empty{
+			width: 200px;
+			height: 2px;
+			@include border-radius;
+			background-color: $primary-color;
+		}
+		
+		img{
+			width: 50%;
+			height: 500px;
+			padding: 1em;
+			object-fit: cover;
+			background-color: transparent;
+			@include responsivemd{
+				height: 370px;
+			}
+			@include responsivesm{
+				width: 50%;
+				height: 220px;
+				padding: 6px;
+			}
+		}
+		.d-flex{
+			justify-content: flex-end;
+			@include responsivemd{
+				justify-content: flex-start;
+				margin-top: 1em;
+				margin-left: -15px;
+			}
+		}
+		.col-lg-4{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	.text{
+		.para{
+			width: 75%;
+			font-size: 1.1em;
+			margin:auto;
+			@include responsivemd{
+				margin:0;
+				font-size: 16px;
+			}
+			@include responsivemmd{
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+.faq-page{
+	.card{
+		background-color: transparent;
+		@include border-radius;
+		// @include box-shadow;
+		padding: 1em;
+		font-size: 18px;
+		@include responsivesm{
+			font-size: 16px;
+		}
+		.nav-item{
+			
+			&:not(:last-child){
+				margin-bottom: 1em;
+			}
+			&:hover{
+				box-shadow:rgba(88, 88, 88, 0.05) 0px 0px 15px;
+			}
+			.nav-link, .wrapper{
+				padding: 1em;
+				background-color: #fff;
+
+			}
+			.nav-link{
+				display: flex;
+				justify-content: space-between;
+				color: $primary-color;
+				
+				i{
+					transform:rotate(0deg);
+					@include transition-in;
+
+				}
+				&.collapsed{
+					i{
+						transform:rotate(-90deg);
+					}
+				}
+			}
+			.wrapper{
+				color: $para;
+				padding-top: 0;
+				padding-left: 2em;
+			}
+		}
+	}
+
+}
+
+.documment-page {
+	
+	.para{
+		color: $para;
+		font-size: 18px;
+		line-height: 2;
+		@include responsivesm{
+			font-size: 16px;
+		}
+	}
+}
+
+// package_modal
+#package_modal{
+	ul{
+		@include ul;
+		a{
+			display: block;
+			height: 75px;
+			position: relative;
+			background-color:$dark;
+			color: #fff;
+			padding: 1em;
+			margin: 1em 0;
+			border-radius: 5px;
+			z-index: 2;
+			@include transition-out;
+			// &:hover, &.active{
+			// 	background-color: rgba($primary-color, 0.8);
+			// 	.left{
+			// 		opacity: 1;
+			// 	}
+
+			// }
+			 &.active{
+				background-color: rgba($primary-color, 1);
+				.left{
+					opacity: 1;
+				}
+				img{
+					opacity: 0.2;
+					mix-blend-mode: normal;
+				}
+
+			}
+			&.active{
+				span{
+					&.check{
+						display: inline;
+					}
+					&:not(.check){
+						display: none;
+					}
+				}
+				// &:hover{
+				// 	span{
+				// 		&.remove{
+				// 			display: inline;
+				// 		}
+				// 		&:not(.remove){
+				// 			display: none;
+				// 		}
+				// 	}
+				// }
+			}
+			&.add_new{
+				display: flex;
+				align-items: center;
+				background-color: $white;
+				border:3px dashed #888;
+				color: $para;
+			}
+
+			p{
+				font-size: 18px;
+				margin: 0;
+			}
+			img{
+				@include image;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 5px;
+				z-index: -1;
+				mix-blend-mode: overlay;
+
+			}
+		}
+		.left {
+			position: absolute;
+			top: 50%;
+			right: 1em;
+			transform: translateY(-50%);
+			opacity: 0;
+			span{
+				font-size: 24px;
+				margin-bottom: 0 !important; 
+				display: none;
+			}
+			.add{
+				display: inline;
+			}
+		}
+	}
+}
+

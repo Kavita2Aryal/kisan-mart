@@ -1,0 +1,614 @@
+@import '../custom';
+label{
+	cursor: pointer;
+}
+.form-control[readonly] {
+	background-color: transparent;
+}
+.top-header{
+	background-color: $white;
+	color: $lite;
+	font-weight: 400;
+	padding: 13px 0;
+	font-size: 15px;
+	letter-spacing: 0.6px;
+	.section-rule{
+		padding: 0;
+		.nav{
+			align-items: center;
+			li{
+				margin-right: 2.5em;
+				&:last-child{
+					margin-right: 0;
+					margin-left: auto;
+					display: flex;
+					a{
+						margin-left: 10px;
+						i,span{
+							font-size: inherit;
+						}
+					}
+				}
+				a{
+					display: flex;
+					align-items: center;
+					&:hover{
+						color: $primary-color;
+						svg path{
+							fill:$primary-color;
+						}
+					}
+				}
+			}
+		}
+		label{
+			margin-bottom: 0;
+			margin-left: 6px;
+		}
+	}
+	@include dropdown;
+	@include responsivemd{
+		display: none;
+	}
+}
+
+
+// main menu
+header{
+	background-color:#fff;
+	font-size: 18px;
+	// font-weight: bold;
+	color: $lite;
+	@include responsivelg{
+		font-size: 16px;
+	}
+	.section-rule{
+		padding: 25px 0;
+		@include responsivelg{
+			padding: 15px 0;
+		}
+	}
+	.nav{
+		align-items: center;
+	}
+	.logo{
+		img{
+			height: auto;
+			width: 11rem;
+			@include responsivelg{
+				width: 9rem;
+			}
+			@include responsivesm{
+				width: 8rem;
+			}
+			
+		}
+
+	}
+	.form-inline{
+		background-color: $white;
+		border-radius: 5px;
+		-webkit-box-pack: justify;
+		justify-content: space-between;
+		height: 56px;
+		position: relative;
+		margin: 0 3em;
+		width: 43%;
+		.form-group{
+			padding: 0 15px;
+			flex-grow:2;
+			position: relative;
+			@include responsive(1002px){
+				padding: 0 10px;
+			}
+			@include responsivemd{
+				height: 100%;
+			}
+			.form-control{
+				background-color: transparent;
+				height: 100%;
+				border: 0;
+				box-shadow: none;
+				flex-grow: 2;
+
+			}
+			.dropdown-menu{
+				width: 100%;
+				top: calc(100% + 20px);
+				border-radius: 0 0 5px 5px;
+
+			}
+			::placeholder{
+				// font-weight: bold;
+				color: $lite;
+			}
+		}
+		button[type=submit]{
+			height: 100%;
+			padding: 0 30px;
+			border-radius: 0;
+			background-color: $secondary-color;
+			border: 0;
+			color: $primary-color;
+			border-radius: 0 5px 5px 0;
+			font-weight: bold;
+			@include responsive(767px){
+				border-radius: 0;
+			}
+
+			@include responsive(1002px){
+				padding: 0 20px;
+			}
+			@include responsivemd{
+				width: 40px;
+				color: transparent;
+				padding: 0 10px;
+				background-color: transparent;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-top: 0;
+				border-bottom: 0;
+			}
+			@include responsivesm{
+				position: absolute;
+				top: 0;
+				right: 0;
+				pointer-events: none;
+				border-left: 0;
+
+			}
+			&:active{
+				background-color: $secondary-color;
+			}
+		}
+		@include responsivelg{
+			height: 52px;
+			margin: 0 1.5em;
+			width: 43%;
+		}
+	}
+	.nav-item{
+		display: block;
+		background-color: rgba($primary-color,0.06);
+		padding: 12px;
+		border-radius: 5px;
+		align-items: center;
+		color: $dark;
+		transition: none;
+		position: relative;
+		&:hover{
+			background-color: $primary-color;
+			color: $white;
+			svg path{
+				fill:$white;
+			}
+		}
+		label{
+			margin-bottom: 0;
+			margin-left: 4px;
+			vertical-align: middle;
+		}
+		sup{
+			right: 80px;
+			border: none;
+			@include responsivemd{
+				right: 0;
+			}
+		}
+	}
+	.nav-list{
+		margin-right: 12px;
+		&:nth-last-child(2){
+			.nav-item{
+				background-color: rgba($red,0.06);
+				&:hover{
+					background-color: $red;
+				}
+			}
+		}
+		&:last-child{
+			margin-right: 0;
+			margin-left: auto;
+			.nav-item{
+				background-color: $white;
+				padding: 12px 20px;
+				&:hover{
+					background-color: $lite;
+				}
+			}
+		}
+		&.dropdown{
+			.dropdown-menu{
+				top:90%;
+			}
+		}
+	}
+	&:not(.mob-header){
+		@include responsivemd{
+			display: none;
+		}
+	}
+}
+
+// secondary-menu
+.secondary-menu{
+	background-color: $primary-color;
+	color: $white;
+	font-size: 17px;
+	// font-weight: bold;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	
+	.section-rule{
+		padding:  0 !important;
+	}
+
+	.nav-link{
+		padding:1.2em 16px;
+		display: block;
+		position: relative;
+		&:hover, &.active{
+			background-color: $secondary-color;
+			color: $primary-color;
+			path{
+				fill: $primary-color;
+			}
+		}
+		@include responsivelg{
+			padding: 1.2em 9px;
+		}
+	}
+	.nav-item{
+		&:nth-child(2){
+			.nav-link{
+				padding-left: 1.5em;
+				@include responsivelg{
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+
+	label{
+		margin-bottom: 0;
+	}
+	.dropdown__wrapper{
+		display: flex;
+		width: 23%;
+		justify-content: space-between;
+		position: relative;
+		.nav-link{
+			// background-color: $secondary-color;
+			color: $primary-color;
+			path{
+				fill: $primary-color;
+			}
+		}
+		.left__part{
+			padding: 1.2em 1.4em;
+			color: $primary-color;
+			background-color: transparent;
+			@include responsivelg{
+				padding: 1.2em 0.6em;
+			}
+			label{
+				display: none;
+				cursor: text;
+			}
+		}
+		
+	}
+	.dropdown{
+		position: static;
+		&:hover {
+			// background-color: #fff;
+			&>.nav-link{
+				background-color: #fff;
+			}
+		}
+		&.hide{
+			background-color: $secondary-color;
+		}
+		.dropdown-toggle::after{
+			content: none;
+		}
+		.white_logo{
+			height: 22px;
+			width: auto;
+			object-fit: cover;
+			transform: scale(1.7);
+		}
+
+		&>.nav-link{
+			float: right;
+
+		}
+		.nav-link{
+			padding: 1.2em 1.4em;
+			@include responsivelg{
+				padding: 1.2em 1em;
+			}
+		}
+
+		.dropdown-menu{
+			top: 100% !important;
+		}
+
+
+		ul{
+			@include ul;
+			background-color: #fff;
+			border-radius: 0 0 5px 5px;
+			padding:14px 1.3em;
+			@include responsivelg{
+				padding: 8px 14px;
+				font-size: 16px;
+			}
+			a{
+				padding: 10px 0;
+				@include responsivelg{
+					padding: 6px 0;
+				}
+			}
+			label{
+				margin-bottom: 0;
+				margin-left: 12px;
+				vertical-align: bottom;
+			}
+
+			.tags--wrapper{
+				margin-top: 1em;
+				@include tags;
+				color: #666;
+			}
+		}
+	}
+	.ml-auto.d-flex{
+		svg{
+			width: auto;
+			height: 22px;
+			object-fit: contain;
+		}
+		.cart-blink, .heart{
+			&:hover, &.added{
+				background-color: $red;
+				svg{
+					animation: shake .5s cubic-bezier(.36,.07,.19,.97) both;
+				}
+				path{
+					fill: #fff;
+				}
+			}
+		}
+	}
+
+
+	&.nosticky{
+		.nav-item.ml-auto.d-flex{
+			display: none !important;
+		}
+		.dropdown-menu{
+			display: none !important;
+		}
+		.white_logo{
+			display: none !important;
+		}
+
+		.left__part label{
+			display: initial;
+		}
+		.dropdown__wrapper{
+			background-color: $secondary-color;
+		}
+		.dropdown.hide:hover a{
+			background-color: $secondary-color;
+		}
+	}
+	@include responsivemd{
+		display: none;
+	}
+
+}
+sup {
+	top: 0.7em;
+	right: 0.4em;
+	background-color: #e2e22b;
+	color: #269116;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid #269116;
+	position: absolute;
+}
+
+// mob header
+header.mob-header{
+	background-color: $primary-color;
+	position:sticky;
+	top: 0px;
+	z-index: 9999;
+	@include  responsivemin(1023px){
+		display: none;
+	}
+	.logo img {
+		height: 3rem;
+		width: auto;
+		@include responsivesm{
+			height: 2.5rem;
+		}
+	}
+	.nav{
+		justify-content: space-between;
+	}
+	.form-inline{
+		width: auto;
+		flex-grow: 2;
+		border-radius: 40px;
+		background-color: #46a138;
+		padding: 0 13px;
+		@include responsivesm{
+			height: 42px;
+			position: static;
+		}
+		@include responsive(350px){
+			height: 39px;
+			margin: 0 12px;
+		}
+		.form-control, ::placeholder{
+			color: #fff;
+			font-size: 1em;
+		}
+		.form-control{
+			@include responsivesm{
+				width: 135px;
+			}
+		}
+		.dropdown-menu{
+			top:100%;
+			@include responsivesm{
+				top: 98%;
+			}
+		}
+		.form-group{
+			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			@include responsivesm{
+				position: static;
+			}
+		}
+	}
+	.nav-list{
+		.nav-item{
+			background-color: transparent !important;
+			position: relative;
+			svg{
+				height: 26px;
+				width: auto;
+				@include responsive(350px){
+					height: 18px;
+				}
+			}
+			@include responsivesm{
+
+				padding-left:0;
+			}
+		}
+		&:last-child .nav-item{
+			@include responsivesm{
+
+				padding: 12px 0;
+			}
+		}
+		
+	} 
+	.section-rule{
+		@include responsivesm{
+			padding: 10px 0;
+		}
+		@include responsive(350px){
+			padding: 6px 0;
+		}
+	}
+	.dropdown-menu{
+		padding: 6px 12px;
+		li{
+			list-style: none;
+			
+		}
+	}
+
+	.tags--wrapper{
+		margin-top: 0em;
+		@include tags;
+		color: #666;
+	}
+	.dropdown-item{
+		padding: 2px 0;
+	}
+
+}
+
+.mob-side-nav.dropdown-menu{
+	@include responsivemin(840px){
+		display: none;
+	}
+	display: block;
+	@include ul;
+	background-color: #fff;
+	border-radius: 0;
+	position: fixed;
+	top: 0px;
+	left: auto;
+	will-change: transform;
+	font-size: inherit;
+	z-index: 99999;
+	right: -100%;
+	width: 80%;
+	height: 100vh;
+	padding: 8px 14px;
+	font-size: 16px;
+	@include transition-out;
+	&.slide{
+		right:0%;
+		@include transition-in;
+	}
+	a{
+		padding: 6px 0;
+		&.cross {
+			background-color: $primary-color;
+			color: #fff;
+			padding: 10px 1em;
+			@include border-radius;
+			label{
+				margin-left: 0px;
+			}
+		}
+		span{
+			vertical-align: bottom;
+		}
+	}
+	label{
+		margin-bottom: 0;
+		margin-left: 12px;
+		vertical-align: bottom;
+	}
+	.lev2{
+		background-color: rgba($primary-color,0.05);
+		padding: 6px 1em;
+		@include border-radius;
+	}
+}
+
+// accnav
+.accnav{
+	.form-inline{
+		width: auto;
+		flex-grow:2;
+	}
+	.nav.list-group{
+		align-items:flex-start;
+		li{
+			width: 100%;
+			.nav-link{
+				&:hover{
+					background-color: $white;
+				}
+			}
+			.log-out{
+				color: $red;
+			}
+		}
+	} 
+	.nav-item label{
+		max-width: 130px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+}
+

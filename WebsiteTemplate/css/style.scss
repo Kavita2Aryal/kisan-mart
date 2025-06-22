@@ -1,0 +1,612 @@
+@import './component_css/header';
+
+
+
+@mixin slicknav{
+	.material-icons{
+		font-size: 2.6rem;
+		@include responsivemd{
+			font-size: 2rem;
+		}
+	}
+	.slick-arrow{
+		background-color: rgba(255, 255, 255, 0.4);
+		border-radius: 4px;
+		z-index: 9;
+		height: 50px;
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $lite;
+		transition: .3s ease;
+		opacity: 0.8;
+		overflow: hidden;
+		@include box-shadow;
+		@include responsivemd{
+			height: 40px;
+			width: 40px;
+		}
+		@include responsive(520px){
+			display: none !important;
+		}
+		&:hover{
+			opacity: 1;
+
+		}
+		&:before{
+			content: none;
+		}
+		&.hidden{
+			opacity: 0;
+			pointer-events: none;
+			@include transition-in;
+		}
+	}
+}
+
+
+.title-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5em;
+	font-weight: bold;
+	@include responsivemmd{
+		margin-bottom: 1em;
+	}
+	a{
+		font-size: 18px;
+	}
+	.section-title{
+		margin-bottom: 0;
+	}
+}
+
+.dropdown-menu{
+	border: 0;
+	box-shadow: 1px 10px 8px #00000014;
+	.dropdown-item{
+		color: inherit;
+	}
+}
+.dropdown.dropright{
+	position: relative;
+	.dropdown-toggle{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&:after{
+			content: none;
+		}
+	}
+	.dropdown-menu{
+		@include border-radius;
+		padding: 1em 0;
+		margin: 0;
+		top: -1em !important;
+		margin: 0;
+		.dropdown-item{
+			padding:7px 1.3em;
+			color: $para;
+
+			@include responsivelg{
+				padding: 7px 14px;
+				font-size: 16px;
+			}
+			&:hover{
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+.dropdown-menu{
+	position: absolute;
+	// transform: translate3d(17px, 43px, 0px); 
+	top: 0px; 
+	left: 0px;
+	will-change: transform;
+	font-size: inherit;
+}
+
+
+//screen
+.screen{
+	font-size: 16px;
+	@include card--margin;
+	aside:first-child{
+		width: 23%;
+		font-weight: 400;
+		font-size: 18px;
+		@include responsivelg{
+			@include card__margin;
+		}
+
+		ul{
+			@include ul;
+			background-color: #fff;
+			border-radius: 0 0 10px 10px;
+			padding:14px 1.3em;
+			color: $para;
+			@include responsivelg{
+				padding: 8px 14px;
+				font-size: 16px;
+			}
+		}
+		a{
+			padding: 10px 0;
+			@include responsivelg{
+				padding: 6px 0;
+			}
+		}
+		label{
+			margin-bottom: 0;
+			margin-left: 12px;
+			vertical-align: bottom;
+		}
+		
+
+		.tags--wrapper{
+			margin-top: 1em;
+			@include tags;
+			color: #666;
+			a.tags{
+				@include responsivelg{
+					
+					&:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)){
+						display: none;
+					}
+					
+				}
+			}
+		}
+		// @include box-shadow;
+	}
+	aside:last-child{
+		width: 77%;
+		padding: 1.5em;
+		@include responsivelg{
+			padding: 1em;
+		}
+		&> .row{
+			@include responsivemmd{
+				background-color: #fff;
+				@include border-radius;
+			}
+		}
+	}
+	.single-carousel{
+		@include card__margin;
+		.item{
+			a{
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		img{
+			@include image;
+		}
+		@include slicknav;
+		.slick-next {
+			right: 1.2rem;
+		}
+		.slick-prev {
+			left: 1.2rem;
+		}
+	}
+
+	article.screen-art{
+		@include article;
+		@include responsivesm{
+			padding: 0 !important;
+		}
+		&> .d-flex{
+			padding:3.6em 2.4em;
+			@include border-radius;
+			background-color: #fff;
+			align-items: center;
+			@include responsivelg{
+				padding: 1.4em;
+			}
+			@include responsivesm{
+				font-size: 14px;
+				padding: 1em;
+			}
+			@include responsive(350px){
+				font-size: 13px;
+				padding: 1em;
+			}
+		}
+		
+		.card__title{
+			font-size: 1.1em;
+			margin-left: 1em;
+			// font-weight: bold;
+			color: $dark;
+			margin-bottom: 0;
+		}
+		img{
+			height: 30px;
+			width: auto;
+			object-fit: contain;
+		}
+	}
+	aside{
+		@include responsivemd{
+			width: 100% !important;
+			padding: 0 !important;
+		}
+		&.screen__aside{
+			@include responsivemd{
+				display: none;
+			}
+		}
+	}
+	.section-rule{
+		@include responsivemd{
+			padding: 20px 0 !important;
+		}
+		@include responsivesm{
+			padding: 14px 0 !important;
+		}
+	}
+}
+
+// today-stock
+.today{
+	width: 100%;
+	overflow: hidden;
+	font-size: 16px;
+	label{
+		margin-bottom: 0;
+		margin-left: 6px;
+		vertical-align: bottom;
+		vertical-align: sub;
+		@include responsive(360px){
+			margin-left: 3px;
+		}
+	}
+
+	@include responsivemd{
+		font-size: 14px;
+	}
+	@include responsive(450px){
+		font-size: 13px;
+	}
+	img{
+		transition: .6s ease-in;
+		@include image;
+	}
+
+	.card{
+		padding: 1.2em;
+		border: 0;
+		@include border-radius;
+		@include responsivesm{
+			padding: 10px;
+		}
+		&:hover{
+			box-shadow: 0 0.3rem 1.525rem -0.375rem rgba(0,0,0,0.1);
+			img{
+				transition: .6s ease-in;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.card__img{
+		height: 140px;
+		@include border-radius;
+		overflow: hidden;
+		margin-bottom: 1em;
+	}
+
+	.card__title{
+		@include card-title;
+		height: auto !important;
+		margin-bottom: 1em;
+		@include responsivemd{
+			font-size: 1em;
+		}
+		@include responsive(450px){
+			// font-size: 13px;
+			
+		}
+		&:hover{
+			color: $primary-color;
+		}
+	}
+
+	.action{
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	button{
+		background-color: transparent;
+		border: 0;
+		box-shadow: none;
+		color: $dark;
+		// font-weight: bold;
+		font-size: 17px;
+		&.wishlist{
+			background-color: rgba($red, 0.04);
+			padding: 10px;
+			@include border-radius;
+			@include responsivemd{
+				position: absolute;
+				top: 13px;
+				right: 13px;
+				height: auto;
+				background-color: #fff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			@include responsivesm{
+				top:8px;
+				right:8px;
+			}
+			&:hover{
+				@include transition-in;
+				box-shadow: 0 0 25px rgba($red, 0.2);
+				svg{
+					@include transition-in;
+					transform: scale(1.1);
+				}	
+			}
+			&.active{
+				@include transition-out;
+				background-color: $red;
+				path{
+					@include transition-out;
+					fill:#fff;
+				}
+			}
+		}
+		svg{
+			@include responsivesm{
+				width: auto;
+				height: 18px;
+			}
+		}
+	}
+	.price{
+		@include price;
+	}
+
+	.item{
+		padding: 0 .75em;
+		@include responsivelg{
+			padding: 0 .5em;
+		}
+		&:first-child{
+			// padding-left: 0;
+		}
+	}
+
+	.slick-list.draggable{
+		width: 110%;
+		@include responsiveboth(1281px, 1025px){
+			width: 100%;
+		}
+		@include responsivelg{
+			width: 101%;
+		}
+	}
+
+	@include slicknav;
+	.slick-list.draggable{
+		padding: 12px 0;
+		@include responsivemd{
+			padding:  0;
+		}
+	}
+	.slick-arrow{
+		@include box-shadow;
+	}
+	.cart{
+		background-color:rgba($primary-color,0.06); 
+		padding:12px; 
+		@include border-radius;
+		@include responsivesm{
+			padding: 5px 12px 11px;
+			width: 100%;
+		}
+		@include responsive(360px){
+			padding: 8px 5px 8px;
+			font-size: 13px;
+		}
+		&:hover{
+			svg{
+				animation: shake .5s cubic-bezier(.36,.07,.19,.97) both;
+			}
+		}
+	}
+}
+
+// fresh vegetables
+.fresh-vegetables{
+	@extend .today;
+	.section-rule{
+		padding-bottom: 20px;
+		@include responsivelg{
+			padding-bottom: 10px;
+		}
+		
+
+	}
+	.card__img{
+		height: 160px;
+		border-radius: 0;
+		margin-bottom: 0 !important;
+		@include responsivesm{
+			height: 110px;
+		}
+	}
+	.card{
+		padding: 0;
+		overflow:hidden;
+	}
+	.card__body{
+		padding: 1.2em;
+		@include responsivelg{
+			padding: 1em;
+		}
+		@include responsivemd{
+			font-size: 13px;
+		}
+		@include responsivesm{
+			padding: 10px;
+		}
+	}
+	article{
+		@include article;
+		@include card--margin;
+		&:nth-child(4n){
+			padding-right: 0px;
+			@include responsivelg{
+				@include article;
+			}
+		}
+		&:nth-child(4n+1){
+			padding-left: 0px;
+			@include responsivelg{
+				@include article;
+			}
+		}
+		&:nth-child(3n){
+			
+			@include responsivelg{
+				padding-right: 0px;
+			}
+			@include responsivemmd{
+				@include article;
+			}
+		}
+		&:nth-child(3n+1){
+			
+			@include responsivelg{
+				padding-left: 0px;
+			}
+			@include responsivemmd{
+				@include article;
+			}
+		}
+		&:nth-child(2n){
+			@include responsivemmd{
+				padding-right: 0;
+			}
+		}
+		&:nth-child(2n+1){
+			@include responsivemmd{
+				padding-left: 0;
+			}
+		}
+
+	}
+	.card__title a{
+		-webkit-line-clamp:1 !important;
+	}
+	.action{
+		width: 100%;
+	}
+
+	.card__top{ 
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content:space-between; 
+	}
+	.wishlist{ height: 100%; } 
+
+	button.cart{ 
+		background-color:rgba($primary-color,0.06); 
+		padding:12px; 
+		@include border-radius;
+		color: $dark;
+		&:hover{
+			@include transition-out;
+			// box-shadow: 0 0 9px rgba(38, 145, 22, 0.3), 0 0 25px rgba(38, 145, 22, 0.1);
+		}
+		@include responsivesm{
+			padding: 5px 12px 11px;
+			width: 100%;
+		}
+		@include responsive(360px){
+			padding: 8px 5px 8px;
+			font-size: 13px;
+		}
+	}
+	.price.del{
+		font-size: 1.1em;
+		text-decoration: line-through;
+		margin-bottom: 0;
+	}
+
+	.form-group{
+		position: relative;
+		width: 82px;
+		height:50px; 
+		background-color: rgba($primary-color, 0.06);
+		@include border-radius;
+		margin: 0;
+		overflow: hidden;
+		@include responsivemd{
+			display: none;
+		}
+		.form-control{
+			height: 100%;
+			width: 100%;
+			background-color: transparent;
+			border: 0;
+			box-shadow: none;
+			text-indent: 10px;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		button{
+			background-color: rgba($primary-color,0.1);
+			color: $primary-color;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 30px;
+			font-size: .9em;
+			@-moz-document url-prefix() {
+				font-size: 1em;
+			}
+			&:last-child{
+				top: auto;
+				bottom: 0;
+			}
+			
+		}
+	}
+}
+
+
+// banner
+.banner{
+	.section-rule{
+		padding: 0;
+		a{
+			display: block;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+
+	}
+	.col-6{
+		@include article;
+	}
+}
+
+
+
+
+@import './component_css/footer';
+
