@@ -28,6 +28,12 @@
             "phpunit/phpunit": "^10.0"
         },
     "autoload": {
+        "files": [
+            "app/Helpers/getalias.php",
+            "app/Helpers/checkalias.php",
+            "app/Helpers/getdata.php",
+            "app/Helpers/image.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",

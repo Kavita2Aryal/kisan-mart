@@ -7,7 +7,6 @@ use App\Http\Controllers\General\UserController;
 use App\Http\Controllers\General\RoleController;
 use App\Http\Controllers\General\ImageCacheController;
 
-Route::get('/', [DashController::class, 'welcome'])->prefix('admin')->name('welcome');
 
 $ctr = ImageCacheController::class;
 Route::get('/image-cache/{path}', [$ctr, 'render'])->where('path', '.*');
@@ -15,7 +14,7 @@ Route::get('/section-cache/{path}', [$ctr, 'render_section'])->where('path', '.*
 Route::get('/ecommerce-cache/{path}', [$ctr, 'render_ecommerce'])->where('path', '.*');
 Route::get('/product-cache/{path}', [$ctr, 'render_product'])->where('path', '.*');
 
-Route::middleware(['auth', 'no.lockscreen'])->group(function () {
+Route::middleware(['auth', 'no.lockscreen'])->prefix('admin')->group(function () {
 
     $ctr = DashController::class;
     Route::get('/dashboard', [$ctr, 'index'])->name('dash.index');

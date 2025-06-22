@@ -16,9 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 //replace require_once to require while testing
 
+// Website
+require_once('modules/website/auth.php');
+
+// require_once('modules/website/web.php');
+
+//admin
 require_once('modules/auth.php');
 
 require_once('modules/general.php');
+
 
 require_once('modules/cms.php');
 
@@ -30,8 +37,6 @@ require_once('modules/ecommerce.php');
 
 Route::any('close-tab', function () { return "<script>window.close();</script>"; })->name('close.tab');
 
-// Website
-require_once('modules/website.php');
 
 
 Route::fallback(function () { abort(404); });

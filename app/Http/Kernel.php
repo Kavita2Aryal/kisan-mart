@@ -66,5 +66,10 @@ class Kernel extends HttpKernel
         'full.cms' => \App\Http\Middleware\Custom\FullCMS::class,
         'mini.cms' => \App\Http\Middleware\Custom\MiniCMS::class,
         'add.page' => \App\Http\Middleware\Custom\AddPage::class,
+
+        'no.maintenance' => \App\Http\Middleware\CheckForWebsiteMaintenanceMode::class,
+        'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+        'approved' => \App\Http\Middleware\EnsureIsApproved::class,
+        'no.checkout.session' => \App\Http\Middleware\CheckoutSessionFlush::class,
     ];
 }
